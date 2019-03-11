@@ -27,6 +27,12 @@ module VCAP::CloudController
       @services_event_repository = dependencies.fetch(:services_event_repository)
     end
 
+    def read
+      #call ism get service brokers
+      brokers
+
+    end
+
     def create
       params = CreateMessage.decode(body).extract
 
